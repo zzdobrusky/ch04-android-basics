@@ -14,8 +14,8 @@ import android.widget.TextView;
  *
  * @author zbynek
  */
-public class AccelerometerTest extends Activity
-                               implements SensorEventListener
+public class CompassTest extends Activity
+                         implements SensorEventListener
 {
     TextView textView;
     StringBuilder builder = new StringBuilder();
@@ -28,13 +28,13 @@ public class AccelerometerTest extends Activity
         setContentView(textView);
 
         SensorManager manager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        if (manager.getSensorList(Sensor.TYPE_ACCELEROMETER).size() == 0)
+        if (manager.getSensorList(Sensor.TYPE_ORIENTATION).size() == 0)
         {
             textView.setText("No accelerometer installed");
         }
         else
         {
-            Sensor accelerometer = manager.getSensorList(Sensor.TYPE_ACCELEROMETER).get(0);
+            Sensor accelerometer = manager.getSensorList(Sensor.TYPE_ORIENTATION).get(0);
             if (!manager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_GAME))
             {
                 textView.setText("Couldn't register sensor listener");
@@ -60,5 +60,5 @@ public class AccelerometerTest extends Activity
     {
         // nothing here
     }
-    
+
 }

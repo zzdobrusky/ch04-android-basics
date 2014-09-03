@@ -26,6 +26,12 @@
         <activity android:label="Accelerometer Test"
                   android:name=".AccelerometerTest"
                   android:configChanges="keyboard|keyboardHidden|orientation" />
+        <activity android:label="Accelerometer Axis Rotation Test"
+                  android:name=".AccelerometerAxisRotationTest"
+                  android:configChanges="keyboard|keyboardHidden|orientation" />
+        <activity android:label="Compass Test"
+                  android:name=".CompassTest"
+                  android:configChanges="keyboard|keyboardHidden|orientation" />
     </application>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
 </manifest>
