@@ -25,8 +25,7 @@ public class AndroidBasicsStarter extends ListActivity
     }
 
     @Override
-    public void onListItemClick(ListView list, View view, int position,
-                                long id)
+    public void onListItemClick(ListView list, View view, int position, long id)
     {
         super.onListItemClick(list, view, position, id);
         String testName = tests[position];
