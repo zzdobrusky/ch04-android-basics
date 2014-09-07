@@ -48,7 +48,12 @@ public class SoundPoolTest extends Activity implements OnTouchListener
 
     protected void onPause()
     {
-        soundPool.release();
+        super.onPause();
+        if (isFinishing())
+        {
+            soundPool.stop(explosionID);
+            soundPool.release();
+        }
     }
 
     @Override
