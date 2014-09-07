@@ -19,7 +19,7 @@ import java.io.IOException;
  */
 public class SoundPoolTest extends Activity implements OnTouchListener
 {
-    SoundPool soundPool;
+    SoundPool soundPool = null;
     int explosionID = -1;
 
     @Override
@@ -46,13 +46,28 @@ public class SoundPoolTest extends Activity implements OnTouchListener
 
     }
 
+    // for some reason doesn't resume
+    protected void onResume()
+    {
+        super.onResume();
+        if (soundPool != null)
+        {
+            soundPool.resume(explosionID);
+        }
+
+    }
+    // for some reason doesn't pause
     protected void onPause()
     {
         super.onPause();
-        if (isFinishing())
+        if (soundPool != null)
         {
-            soundPool.stop(explosionID);
-            soundPool.release();
+            soundPool.pause(explosionID);
+            if (isFinishing())
+            {
+                soundPool.stop(explosionID);
+                soundPool.release();
+            }
         }
     }
 
