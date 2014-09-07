@@ -25,11 +25,12 @@ public class AccelerometerAxisRotationTest extends Activity
     @Override
     public void onResume()
     {
-        WindowManager windowMgr = (WindowManager)this.getSystemService(Activity.WINDOW_SERVICE);
+        Context context = this;
+        WindowManager windowMgr = (WindowManager)context.getSystemService(Activity.WINDOW_SERVICE);
         // getOrientation() is deprecated in Android 8 but is the same as getRotation,
         // which is the rotation from the natural orientation of the device
         //screenRotation = windowMgr.getDefaultDisplay().getOrientation();
-        screenRotation = windowMgr.getDefaultDisplay().getOrientation();
+        screenRotation = windowMgr.getDefaultDisplay().getRotation();
     }
 
     static final int[][] ACCELEROMETER_AXIS_SWAP =
