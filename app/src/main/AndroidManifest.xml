@@ -59,6 +59,9 @@
         <activity android:label="Font Test"
                   android:name=".FontTest"
                   android:configChanges="keyboard|keyboardHidden|orientation" />
+        <activity android:label="Surface View Test"
+                  android:name=".SurfaceViewTest"
+                  android:configChanges="keyboard|keyboardHidden|orientation" />
     </application>
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
 </manifest>
